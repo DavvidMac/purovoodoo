@@ -1,12 +1,12 @@
 import React from "react";
 import Perfume from "../.././Perfume.png";
-import { Button, Container, Grid } from "@mui/material";
+import { Button, ButtonGroup, Container, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 
 import Footer from '../../Components/Footer';
 
 const Home = () => {
-  const [on,setOn]=React.useState(true)
+  const [on, setOn] = React.useState(false)
   return (
     <>
       <Container maxWidth="fixed">
@@ -34,13 +34,18 @@ const Home = () => {
               Imagine ganhar essa incrivel perfume que contem mais de 20
               fragrancias aromaticas.
             </p>
-            <Link to={"/Formulario"} style={{ textDecoration: "none" }}>
-              <Button variant="outlined">Participar</Button>
-            </Link>
+            <ButtonGroup disableElevation variant="contained" aria-label="outlined primary button group">
+              <Link to={"/Formulario"} style={{ textDecoration: "none" }}>
+                <Button>Participar</Button>
+              </Link>
+              <Link to={"/Buy"} style={{ textDecoration: "none" }}>
+                <Button >Comprar</Button>
+              </Link>
+            </ButtonGroup>
           </Grid>
         </Grid>
       </Container>
-      {on && <Footer style={{marginBottom:'0'}}/>}
+      {on && <Footer style={{ marginBottom: '0' }} />}
     </>
   );
 };
