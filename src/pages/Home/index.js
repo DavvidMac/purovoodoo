@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Footer from '../../Components/Footer';
 
 const Home = () => {
+  const [on,setOn]=React.useState(true)
   return (
     <>
       <Container maxWidth="fixed">
@@ -27,11 +28,11 @@ const Home = () => {
               justifyContent: "center",
             }}
           >
-            <h2 style={{ color: "red" }}>Promoção</h2>
+            <h2 style={{ color: "red" }}>Sorteio</h2>
             <h1>Puro Voodoo</h1>
             <p >
-              Imagine ganhar essa incrivel perfume que contem mais de 15
-              fragrancias aromaticas
+              Imagine ganhar essa incrivel perfume que contem mais de 20
+              fragrancias aromaticas.
             </p>
             <Link to={"/Formulario"} style={{ textDecoration: "none" }}>
               <Button variant="outlined">Participar</Button>
@@ -39,7 +40,7 @@ const Home = () => {
           </Grid>
         </Grid>
       </Container>
-      <Footer/>
+      {on && <Footer style={{marginBottom:'0'}}/>}
     </>
   );
 };

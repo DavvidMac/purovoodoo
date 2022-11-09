@@ -1,6 +1,6 @@
 import React from "react";
 import { AppBar, Toolbar, IconButton, Typography } from "@mui/material";
-
+import { Link } from "react-router-dom";
 const Header = () => {
     
   return (
@@ -13,7 +13,7 @@ const Header = () => {
           sx={{ mr: 2 }}
         ></IconButton>
         <Typography variant="h4" color="inherit" component="div">
-          Goldstein's
+          <Link to={'/'} style={{textDecoration:'none',color:'white'}}>Goldstein's</Link>
         </Typography>
       </Toolbar>
     </AppBar>
