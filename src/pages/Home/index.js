@@ -3,19 +3,30 @@ import Perfume from "../.././Perfume.png";
 import { Button, ButtonGroup, Container, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 
-import Footer from '../../Components/Footer';
+import Footer from "../../Components/Footer";
 
 const Home = () => {
-  const [on, setOn] = React.useState(false)
+
+  const [on, setOn] = React.useState(false);
+
   return (
     <>
       <Container maxWidth="fixed">
         <Grid container spacing={4}>
-          <Grid item xs={6} md={6}>
+          <Grid
+            item
+            xs={6}
+            md={6}
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+            }}
+          >
             <img
               src={Perfume}
               alt={"Puro Voodoo"}
-              width={(window.screen.width / 12) * 5}
+              width={(window.screen.width / 12) * 3}
             />
           </Grid>
           <Grid
@@ -30,22 +41,23 @@ const Home = () => {
           >
             <h2 style={{ color: "red" }}>Sorteio</h2>
             <h1>Puro Voodoo</h1>
-            <p >
-              Imagine ganhar essa incrivel perfume que contem mais de 20
-              fragrancias aromaticas.
+            <p>
+              Imagine ganhar esse incrivel perfume que contem mais de 20
+              fragrancias aromáticas.Uma oferta da goldstains direto pra você!
             </p>
-            <ButtonGroup disableElevation variant="contained" aria-label="outlined primary button group">
+            <ButtonGroup
+              disableElevation
+              variant="contained"
+              aria-label="outlined primary button group"
+            >
               <Link to={"/Formulario"} style={{ textDecoration: "none" }}>
                 <Button>Participar</Button>
-              </Link>
-              <Link to={"/Buy"} style={{ textDecoration: "none" }}>
-                <Button >Comprar</Button>
               </Link>
             </ButtonGroup>
           </Grid>
         </Grid>
       </Container>
-      {on && <Footer style={{ marginBottom: '0' }} />}
+      {on && <Footer style={{ marginBottom: "0" }} />}
     </>
   );
 };
